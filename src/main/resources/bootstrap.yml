@@ -1,0 +1,23 @@
+logging:
+  level:
+    root: 'INFO'
+server:
+  port: 8085
+spring:
+  application:
+    name: 'spring-consul'
+  cloud:
+    consul:
+      host: ${CONSUL_HOST:localhost}
+      port: ${CONSUL_PORT:8500}
+      discovery:
+        healthCheckPath: /health
+        healthCheckInterval: 15s
+      config:
+        enabled: true
+        prefix: configuration
+        profileSeparator: '::'
+        format: properties
+        data-key: application
+        watch:
+          delay: 10000
