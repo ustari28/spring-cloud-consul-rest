@@ -7,3 +7,11 @@ default it's data.
 ```
 docker run -d --name dev-consul -p 8300:8300 -p 8301:8301 -p 8302:8302 -p 8600:8600 -p 8500:8500 consul
 ```
+## Notes
+List of mandatory properties that must be created to consult server:
+```
+consul.example.value=testactualizado
+resource.path=templates/
+fecha.actualizacion=20170723
+```
+The path to property is configuration/spring-consul/application
