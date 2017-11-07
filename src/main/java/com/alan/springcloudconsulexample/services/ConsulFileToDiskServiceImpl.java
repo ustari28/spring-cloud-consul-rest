@@ -1,7 +1,8 @@
 package com.alan.springcloudconsulexample.services;
 
 import com.alan.springcloudconsulexample.dto.KeyValueConsulDTO;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
@@ -20,11 +21,12 @@ import static org.apache.commons.lang.CharEncoding.UTF_8;
 
 /**
  * @author Alan Dávila<br>
- *         22 Jul. 2017 19:26
+ * 22 Jul. 2017 19:26
  */
-@Slf4j
 @Service
 public class ConsulFileToDiskServiceImpl implements IConsulFileService {
+
+    private Logger log = LoggerFactory.getLogger(ConsulFileToDiskServiceImpl.class);
 
     @Autowired
     private RestTemplate restTemplate;
